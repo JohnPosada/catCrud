@@ -67,11 +67,12 @@ const Create = () => {
         className="mx-auto mt-10 flex w-96 flex-col justify-center rounded-3xl bg-sky-700 p-10"
         onSubmit={handleCreate}
       >
+        <h2 className="mb-2 font-extrabold text-white">Create a new vote </h2>
         <label
           className="pl-15 m-2 flex flex-col text-white"
           htmlFor="image_id"
         >
-          image_id
+          <span className="mb-2 font-bold">image_id</span>
           <input
             className="w-full appearance-none rounded border-2 border-black bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-gray-200 focus:bg-white focus:outline-none"
             type="text"
@@ -81,7 +82,7 @@ const Create = () => {
         </label>
 
         <label className="pl-15 m-2 flex flex-col text-white" htmlFor="sub_id">
-          sub_id
+          <span className="mb-2 font-bold">sub_id</span>
           <input
             className="w-full appearance-none rounded border-2 border-black bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-gray-200 focus:bg-white focus:outline-none"
             type="text"
@@ -94,7 +95,7 @@ const Create = () => {
           className="pl-15 m-2 flex flex-col text-white"
           htmlFor="voteValue"
         >
-          Vote Value
+          <span className="mb-2 font-bold">Vote Value</span>
           <input
             className="w-full appearance-none rounded border-2 border-black bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-gray-200 focus:bg-white focus:outline-none"
             type="number"
@@ -104,7 +105,7 @@ const Create = () => {
         </label>
 
         <input
-          className="mt-4 cursor-pointer font-bold text-white hover:rounded-lg hover:bg-gray-300 hover:text-gray-900"
+          className="mt-6 cursor-pointer rounded-lg bg-gray-700 p-2 font-bold text-white hover:bg-gray-300 hover:text-gray-900"
           type="submit"
           name="submit"
           id="submit"
