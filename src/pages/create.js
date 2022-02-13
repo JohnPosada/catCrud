@@ -34,7 +34,6 @@ const createVote = async (body) => {
     },
     body: JSON.stringify(body),
   };
-  console.log(requestOptions);
   try {
     const res = await fetch(`${process.env.API}/votes`, requestOptions);
     return await res.json();
@@ -62,25 +61,55 @@ const Create = () => {
   };
 
   return (
-    <div className="flex flex-col pl-10">
+    <div className="flex flex-col">
       <Navbar />
-      <form onSubmit={handleCreate}>
-        <label htmlFor="image_id">
+      <form
+        className="mx-auto mt-10 flex w-96 flex-col justify-center rounded-3xl bg-sky-700 p-10"
+        onSubmit={handleCreate}
+      >
+        <label
+          className="pl-15 m-2 flex flex-col text-white"
+          htmlFor="image_id"
+        >
           image_id
-          <input type="text" name="image_id" id="image_id" />
+          <input
+            className="w-full appearance-none rounded border-2 border-black bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-gray-200 focus:bg-white focus:outline-none"
+            type="text"
+            name="image_id"
+            id="image_id"
+          />
         </label>
 
-        <label htmlFor="sub_id">
+        <label className="pl-15 m-2 flex flex-col text-white" htmlFor="sub_id">
           sub_id
-          <input type="text" name="sub_id" id="sub_id" />
+          <input
+            className="w-full appearance-none rounded border-2 border-black bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-gray-200 focus:bg-white focus:outline-none"
+            type="text"
+            name="sub_id"
+            id="sub_id"
+          />
         </label>
 
-        <label htmlFor="voteValue">
-          voteValue
-          <input type="number" name="voteValue" id="voteValue" />
+        <label
+          className="pl-15 m-2 flex flex-col text-white"
+          htmlFor="voteValue"
+        >
+          Vote Value
+          <input
+            className="w-full appearance-none rounded border-2 border-black bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-gray-200 focus:bg-white focus:outline-none"
+            type="number"
+            name="voteValue"
+            id="voteValue"
+          />
         </label>
 
-        <input type="submit" name="submit" id="submit" />
+        <input
+          className="mt-4 cursor-pointer font-bold text-white hover:rounded-lg hover:bg-gray-300 hover:text-gray-900"
+          type="submit"
+          name="submit"
+          id="submit"
+          value="Create"
+        />
       </form>
       <div>{vote.vote_id}</div>
     </div>
