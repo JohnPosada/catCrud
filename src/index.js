@@ -16,6 +16,7 @@ ReactDOM.render(
       <Route exact strict path="/create" element={<Create />} />
       <Route exact strict path="/delete" element={<Delete />} />
       <Route exact strict path="/search" element={<Search />} />
+      <Route exact strict path="/categories" element={<App />} />
     </Routes>
   </BrowserRouter>,
 
