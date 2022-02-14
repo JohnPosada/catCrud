@@ -58,7 +58,7 @@ const Category = () => {
   }, []);
 
   return (
-    <div className="flex flex-row">
+    <div className="flex h-screen flex-row bg-opacity-80 bg-cat-pattern bg-[length:100px_100px] bg-clip-content bg-repeat">
       <form
         className="mx-auto mt-10 flex h-52 w-96 flex-col justify-center rounded-3xl bg-sky-700 p-10"
         onSubmit={handleFindCategory}
@@ -89,9 +89,11 @@ const Category = () => {
         />
       </form>
 
-      <div className="mx-auto mt-10 flex h-fit max-w-2xl flex-wrap justify-center rounded-3xl bg-sky-700 p-10">
-        <img src={categoryImage} alt="" className="ml-2 mb-2 max-h-full" />
-      </div>
+      {categoryImage !== "" ? (
+        <div className="mx-auto mt-10 flex h-fit w-fit  max-w-2xl flex-row overflow-x-auto rounded-3xl bg-sky-700 p-10">
+          <img src={categoryImage} alt="" className="ml-2 mb-2 max-h-full" />
+        </div>
+      ) : null}
     </div>
   );
 };
