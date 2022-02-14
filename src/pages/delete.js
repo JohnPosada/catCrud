@@ -50,8 +50,6 @@ const Delete = () => {
   const handleDelete = async () => {
     event.preventDefault();
     const res = await deleteVote(selectedVote);
-    console.log(res);
-    // setDeletedVote();
   };
 
   const handleSelectVote = (event) => {

@@ -47,7 +47,6 @@ const searchBreedByName = async (name) => {
     },
   };
   try {
-    // const res = await fetch(
     const res = await fetch(
       `${process.env.API}/breeds/search?q=${name}`,
       requestOptions
@@ -102,19 +101,11 @@ const Search = () => {
     setImagesBreed(await Promise.all(images));
   };
 
-  // const handleSearch = async () => {
-  //   setSearchVote(vote);
-  // };
-
-  // useEffect(async () => {
-  //   const breeds = await searchBreeds();
-  // }, []);
-
   return (
     <div className="flex flex-col">
       <Navbar />
       <div className="flex flex-row">
-        <form className="mx-auto mt-10 flex w-96 flex-col justify-center rounded-3xl bg-sky-700 p-10">
+        <form className="mx-auto mt-10 flex h-40 w-96 flex-col justify-center rounded-3xl bg-sky-700 p-10">
           <label htmlFor="id_voto">
             <span className="mb-2 font-bold text-white">Breed name</span>
             <input
@@ -125,13 +116,6 @@ const Search = () => {
               id="breed_name"
             />
           </label>
-          {/* <input
-          className="mt-6 cursor-pointer rounded-lg bg-gray-700 p-2 font-bold text-white hover:bg-gray-300 hover:text-gray-900"
-          type="submit"
-          name="submit"
-          id="submit"
-          value="Search"
-        /> */}
         </form>
         <div className="mx-auto mt-10 flex h-fit max-w-2xl flex-wrap justify-center rounded-3xl bg-sky-700 p-10">
           {imagesBreed.map((image, index) => {
