@@ -14,6 +14,9 @@ const Navbar = () => {
     {
       name: "Search",
     },
+    {
+      name: "Categories",
+    },
   ];
   return (
     <div className="flex flex-row bg-gray-200 py-5 pl-10">
