@@ -102,7 +102,7 @@ const Search = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex h-screen flex-col bg-opacity-80 bg-cat-pattern bg-[length:100px_100px] bg-clip-content bg-repeat">
       <Navbar />
       <div className="flex flex-row">
         <form className="mx-auto mt-10 flex h-40 w-96 flex-col justify-center rounded-3xl bg-sky-700 p-10">
@@ -117,18 +117,20 @@ const Search = () => {
             />
           </label>
         </form>
-        <div className="mx-auto mt-10 flex h-fit max-w-2xl flex-wrap justify-center rounded-3xl bg-sky-700 p-10">
-          {imagesBreed.map((image, index) => {
-            return (
-              <img
-                key={index}
-                src={image}
-                alt="not found"
-                className="ml-2 mb-2 max-h-20"
-              />
-            );
-          })}
-        </div>
+        {imagesBreed.length !== 0 ? (
+          <div className="mx-auto mt-10 flex h-fit w-fit  max-w-2xl flex-row overflow-x-auto rounded-3xl bg-sky-700 p-10">
+            {imagesBreed.map((image, index) => {
+              return (
+                <img
+                  key={index}
+                  src={image}
+                  alt="not found"
+                  className="ml-2 mb-2 max-h-40"
+                />
+              );
+            })}
+          </div>
+        ) : null}
       </div>
     </div>
   );
